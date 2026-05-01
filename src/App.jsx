@@ -104,10 +104,10 @@ export default function App() {
     }
 
     const jaExiste = reservas.find(
-      r => r.apartamento === form.apartamento.trim() && r.bloco === form.bloco
+     r => r.apartamento === form.apartamento.trim() && r.bloco === form.bloco && r.nome.toLowerCase() === form.nome.trim().toLowerCase()
     );
     if (jaExiste) {
-      setErro("Este apartamento já tem reserva neste horário.");
+      setErro("Esta pessoa já tem reserva neste horário.");
       setCarregando(false);
       return;
     }
